@@ -1,0 +1,15 @@
+{
+  "name": "@towbe/serverless-apollo-template",
+  "version": "1.0.0",
+  "description": "A template for an Apollo Serverless project on AWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "serverless",
+    "apollo"
+  ],
+  "author": "LinkIt",
+  "license": "MIT"
+}
