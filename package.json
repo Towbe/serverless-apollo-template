@@ -10,7 +10,8 @@
     "build:dev": "NODE_ENV=development webpack --config webpack.dev.js --watch",
     "deploy": "NODE_ENV=production serverless deploy",
     "lint": "eslint .",
-    "prepare": "node ./scripts/prepare"
+    "prepare": "node ./scripts/prepare",
+    "update-template": "git pull template-repo/master"
   },
   "keywords": [
     "serverless",
