@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: mv .npmrc-ci .npmrc
       - run: npm ci
-      - run: sls deploy
+      - run: npm run deploy
 
   test:
     docker:
