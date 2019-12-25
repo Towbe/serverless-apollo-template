@@ -15,4 +15,5 @@ readline.question('What is the git url of the new node? ', (url) => {
     exec('git push origin master');
     exec('git branch --set-upstream-to origin/master');
     console.log('First version pushed');
+    process.exit(0);
 });
