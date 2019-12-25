@@ -2,9 +2,9 @@ const { gql } = require('apollo-server-lambda');
 
 export const schema = gql`
 
-type Query {
+extend type Query {
 }
     
-type Mutation {
+extend type Mutation {
 }
 `;
