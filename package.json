@@ -9,7 +9,8 @@
     "start:server": "NODE_ENV=development nodemon --watch ./build ./build/main",
     "build:dev": "NODE_ENV=development webpack --config webpack.dev.js --watch",
     "deploy": "NODE_ENV=production serverless deploy",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "node ./scripts/prepare"
   },
   "keywords": [
     "serverless",
