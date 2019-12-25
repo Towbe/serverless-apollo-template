@@ -4,8 +4,6 @@ jobs:
   build:
     docker:
       - image: node:12
-    environment:
-      NODE_ENV: production
     steps:
       - checkout
       - run: mv .npmrc-ci .npmrc
@@ -15,8 +13,6 @@ jobs:
   test:
     docker:
       - image: node:12
-    environment:
-      NODE_ENV: production
     steps:
       - checkout
       - run: mv .npmrc-ci .npmrc
