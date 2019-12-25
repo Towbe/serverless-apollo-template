@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development concurrently \"npm run build:dev\" \"npm run start:server\"",
+    "start": "NODE_ENV=development npm-run-all --parallel build:dev start:server",
     "start:server": "NODE_ENV=development nodemon --watch ./build ./build/main",
-    "build:dev": "NODE_ENV=development webpack --config webpack.config.js --watch",
+    "build:dev": "NODE_ENV=development webpack --config webpack.dev.js --watch",
     "lint": "eslint ."
   },
   "keywords": [
