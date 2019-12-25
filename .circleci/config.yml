@@ -8,6 +8,17 @@ jobs:
       - checkout
       - run: mv .npmrc-ci .npmrc
       - run: npm ci
+      - run:
+          name: Create aws credentials file
+          command: mkdir ~/.aws && touch ~/.aws/credentials
+      - run:
+          name: Initialize AWS Credentials for dev
+          command: |
+            echo "Deploying development keys"
+            printf "\n\n[default]\naws_access_key_id = $awskeys_id_dev\naws_secret_access_key=$awskeys_secret_dev" >> ~/.aws/credentials
+            printf "\n\n[towbe-dev]\naws_access_key_id = $awskeys_id_dev\naws_secret_access_key=$awskeys_secret_dev" >> ~/.aws/credentials
+            echo 'export AWS_KEY_ID=$awskeys_id_dev' >> $BASH_ENV
+            echo 'export AWS_SECRET_ACCESS_KEY=$awskeys_secret_dev' >> $BASH_ENV
       - run: npm run deploy
 
   test:
