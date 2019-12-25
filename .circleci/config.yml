@@ -6,6 +6,7 @@ jobs:
       - image: node:12
     steps:
       - checkout
+      - run: mv .npmrc-ci .npmrc
       - run: npm ci
       - run: sls deploy
 
@@ -14,6 +15,7 @@ jobs:
       - image: node:12
     steps:
       - checkout
+      - run: mv .npmrc-ci .npmrc
       - run: npm ci
 
 workflows:
@@ -29,6 +31,7 @@ workflows:
   test:
     jobs:
       - test:
+          context: npm-cd
           filters:
             branches:
               ignore:
