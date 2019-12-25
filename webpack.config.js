@@ -18,12 +18,12 @@ module.exports = {
     watchOptions: {
         aggregateTimeout: 300,
         poll: 1000,
-        ignored: ['node_modules', 'dist/*'],
+        ignored: ['node_modules', 'build/*'],
     },
     mode: process.env.NODE_ENV,
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
     },
     externals: externals,
     plugins: plugins,
