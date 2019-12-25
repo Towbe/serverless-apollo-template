@@ -4,29 +4,23 @@ const StartServerPlugin = require('start-server-webpack-plugin');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 
-const plugins = [];
-const externals = [];
-const entry = [path.join(__dirname, 'src/gql/handler_local.js')];
-
-if (process.env.NODE_ENV === 'development') {
-    plugins.push(new CleanWebpackPlugin());
-}
-
 module.exports = {
-    entry: entry,
-    watch: process.env.NODE_ENV === 'development',
+    entry: [path.join(__dirname, 'src/gql/handler_local.js')],
+    watch: true,
     watchOptions: {
         aggregateTimeout: 300,
         poll: 1000,
         ignored: ['node_modules', 'build/*'],
     },
-    mode: process.env.NODE_ENV,
+    mode: 'development',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'build'),
     },
-    externals: externals,
-    plugins: plugins,
+    externals: [],
+    plugins: [
+        new CleanWebpackPlugin(),
+    ],
     target: 'node',
     module: {
         rules: [
