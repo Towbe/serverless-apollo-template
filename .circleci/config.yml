@@ -18,3 +18,14 @@ workflows:
     jobs:
       - build:
           context: org-global
+          filters:
+            branches:
+              only:
+                - master
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - master
