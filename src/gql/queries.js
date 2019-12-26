@@ -1,4 +1,4 @@
-const aws = require('aws-sdk');
+import aws from 'aws-sdk';
 
 export default {
 };
