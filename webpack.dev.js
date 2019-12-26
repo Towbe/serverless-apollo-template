@@ -3,6 +3,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const StartServerPlugin = require('start-server-webpack-plugin');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: [path.join(__dirname, 'src/gql/handler_local.js')],
@@ -19,7 +20,10 @@ module.exports = {
     },
     externals: [],
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
+        new CopyWebpackPlugin([
+            { from: './src/gql/schema.graphql', to: 'schema.graphql' }
+        ]),
     ],
     target: 'node',
     module: {
@@ -33,7 +37,13 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }
+            },
+           {
+             test: /\.(graphql)$/,
+             use: [
+               'file-loader',
+             ],
+           },
         ]
     }
 };

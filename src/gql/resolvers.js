@@ -6,8 +6,7 @@ import mutations from './mutations';
 const resolvers = {
     ...structures,
     Query: queries,
-    Mutation: mutations,
 };
 
-exports.resolvers = resolvers;
+export default resolvers;
 

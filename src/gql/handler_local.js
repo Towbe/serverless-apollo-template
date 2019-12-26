@@ -1,19 +1,23 @@
-const { ApolloServer } = require('apollo-server');
+import fs from 'fs';
+import resolvers from './resolvers';
+const { ApolloServer, gql } = require('apollo-server');
 const AWS = require('aws-sdk');
+const { buildFederatedSchema } = require('@apollo/federation');
 
 AWS.config.update({
   region: process.env.LAWS_REGION,
 });
-
-const { resolvers } = require('./resolvers');
-const { schema } = require('./schema');
+const schema = gql(fs.readFileSync('./schema.graphql', 'utf-8'));
 
 const context = require('./context').default;
 
 const server = new ApolloServer({
-  typeDefs: schema,
-  resolvers,
-  context,
+  schema: buildFederatedSchema([
+    {
+      typeDefs: schema,
+      resolvers,
+    }
+  ])
 });
 
 server.listen({
