@@ -1,6 +1,6 @@
 extend type Query {
 }
 
-extend type Migration {
+extend type Mutation{
 
 }
