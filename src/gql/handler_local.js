@@ -7,7 +7,7 @@ const {makeExecutableSchema} = require('@apollo/federation');
 AWS.config.update({
   region: process.env.LAWS_REGION,
 });
-const schema = gql(fs.readFileSync('./schema.graphql', 'utf-8'));
+const schema = gql(fs.readFileSync('./schema', 'utf-8'));
 
 const context = require('./context').default;
 

@@ -22,7 +22,7 @@ module.exports = {
     plugins: [
         // new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
-            { from: './src/gql/schema.graphql', to: 'schema.graphql' }
+            { from: './src/gql/schema.js', to: 'schema.js' }
         ]),
     ],
     target: 'node',

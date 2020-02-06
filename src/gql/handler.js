@@ -3,7 +3,7 @@ import resolvers from './resolvers';
 
 const { ApolloServer, gql } = require('apollo-server-lambda');
 const { buildFederatedSchema } = require('@apollo/federation');
-const schema = gql(fs.readFileSync('./schema.graphql', 'utf-8'));
+const schema = gql(fs.readFileSync('./schema', 'utf-8'));
 
 const context = require('./context').default;
 
