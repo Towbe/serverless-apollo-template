@@ -7,7 +7,7 @@ const { buildFederatedSchema } = require('@apollo/federation');
 AWS.config.update({
   region: process.env.LAWS_REGION,
 });
-const schema = gql(fs.readFileSync('./schema.graphql', 'utf-8'));
+import { schema } from './schema';
 
 const context = require('./context').default;
 
