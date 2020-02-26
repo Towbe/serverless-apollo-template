@@ -37,6 +37,7 @@
     "graphql-transform-schema": "^0.2.2",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
+    "serverless-plugin-ifelse": "^1.0.5",
     "serverless-pseudo-parameters": "^2.5.0",
     "uuid": "^3.3.3"
   },

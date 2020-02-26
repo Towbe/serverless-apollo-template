@@ -16,6 +16,7 @@ plugins:
   - serverless-plugin-include-dependencies
   - serverless-webpack
   - serverless-pseudo-parameters
+  - serverless-plugin-ifelse
 
 functions:
   hello:
