@@ -16,6 +16,16 @@ const server = new ApolloServer({
       resolvers,
     },
   ]),
+  context: (context) => ({
+    ...context,
+    user: {
+      email: 'test+ali@towbe.com',
+      first_name: 'Test',
+      last_name: 'Dispatcher',
+      organization: 'Test Org',
+      uid: 'DDRLCuxylQU5KEXrdrZOIYHKpLI3',
+    },
+  }),
 });
 
 server.listen({
