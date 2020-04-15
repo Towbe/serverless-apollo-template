@@ -10,6 +10,9 @@ const server = new ApolloServer({
     resolvers,
   }]),
   introspection: true,
+  context: (opts, context) => {
+    return opts.event.ctx;
+  },
 });
 
 exports.graphqlHandler = server.createHandler({
