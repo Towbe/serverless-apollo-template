@@ -6,10 +6,8 @@ export const schema = gql`
     scalar JSON
 
 extend type Query {
-    asdf: String
 }
 
 extend type Mutation {
-    eedds: String
 }
 `;

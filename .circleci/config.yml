@@ -72,7 +72,6 @@ workflows:
                 - master
           requires:
             - approve-prod
-            - build
   test:
     jobs:
       - test:
