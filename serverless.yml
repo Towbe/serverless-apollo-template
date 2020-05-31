@@ -1,4 +1,4 @@
-#service: serverless-apollo-template
+service: serverless-apollo-template
 
 provider:
   name: aws
