@@ -17,7 +17,11 @@ jobs:
             echo "Deploying development keys"
             printf "\n\n[default]\naws_access_key_id = $awskeys_id_dev\naws_secret_access_key=$awskeys_secret_dev" >> ~/.aws/credentials
             printf "\n\n[towbe-dev]\naws_access_key_id = $awskeys_id_dev\naws_secret_access_key=$awskeys_secret_dev" >> ~/.aws/credentials
-      - run: npm run deploy
+      - run:
+          name: Deploy to dev
+          command: npm run deploy
+          environment:
+            BUCKET_PREFIX: dev
 
   build-prod:
     docker:
