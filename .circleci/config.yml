@@ -41,6 +41,7 @@ jobs:
           command: npm run deploy
           environment:
             AWS_PROFILE: towbe-prod
+            BUCKET_PREFIX: com
 
   test:
     docker:
