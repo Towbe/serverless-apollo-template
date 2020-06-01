@@ -22,6 +22,8 @@ jobs:
           command: npm run deploy
           environment:
             BUCKET_PREFIX: dev
+            GRAPHQL_KEY: graphqlkey-3z4gQq
+            FIREBASE_ACC: firebaseServiceAccount-6XJovy
 
   build-prod:
     docker:
@@ -46,6 +48,8 @@ jobs:
           environment:
             AWS_PROFILE: towbe-prod
             BUCKET_PREFIX: com
+            GRAPHQL_KEY: graphqlkey-7cWgCm
+            FIREBASE_ACC: firebaseServiceAccount-LwBplm
 
   test:
     docker:
