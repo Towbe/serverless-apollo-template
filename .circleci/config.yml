@@ -65,10 +65,6 @@ workflows:
     jobs:
       - build:
           context: awscreds
-          filters:
-            branches:
-              only:
-                - master
       - approve-prod:
           type: approval
           requires:
@@ -81,11 +77,11 @@ workflows:
                 - master
           requires:
             - approve-prod
-  test:
-    jobs:
-      - test:
-          context: npm-dep
-          filters:
-            branches:
-              ignore:
-                - master
+#  test:
+#    jobs:
+#      - test:
+#          context: npm-dep
+#          filters:
+#            branches:
+#              ignore:
+#                - master
