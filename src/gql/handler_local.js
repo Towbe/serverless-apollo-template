@@ -6,7 +6,7 @@ const AWS = require('aws-sdk');
 const { buildFederatedSchema } = require('@apollo/federation');
 
 AWS.config.update({
-  region: process.env.LAWS_REGION,
+  region: process.env.AWS_REGION,
 });
 
 const server = new ApolloServer({
