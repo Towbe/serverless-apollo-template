@@ -2,7 +2,8 @@
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
+  timeout: 30
   logs:
     restApi: true
 #  iamRoleStatements:
